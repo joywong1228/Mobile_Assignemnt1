@@ -2,8 +2,9 @@ import React from 'react';
 import { StyleSheet, View, ScrollView } from 'react-native';
 import NavBar from './components/NavBar';
 import GroupInfo from './components/GroupInfo';
+import ButtomNav from './components/ButtomNav';
 import ImageGrid from './components/ImageGrid';
-import BottomNav from './components/ButtomNav';
+
 
 export default function App() {
   return (
@@ -13,7 +14,7 @@ export default function App() {
         <GroupInfo />
         <ImageGrid />
       </ScrollView>
-      <BottomNav />
+      <ButtomNav />
     </View>
   );
 }
