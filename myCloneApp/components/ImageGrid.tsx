@@ -11,8 +11,11 @@ const images = [
     require('../assets/3.jpg'),
     require('../assets/4.jpg'),
     require('../assets/5.jpg'),
-    require('../assets/6.jpg')
-    // Add more images here if needed
+    require('../assets/6.jpg'),
+    require('../assets/7.jpg'),
+    require('../assets/8.jpg'),
+    require('../assets/9.jpg'),
+    require('../assets/10.jpg')
 ];
 
 const ImageGrid: React.FC = () => {
