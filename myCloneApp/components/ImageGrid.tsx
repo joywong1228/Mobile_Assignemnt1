@@ -1,47 +1,46 @@
 import React from 'react';
-import { View, Image, StyleSheet, Dimensions, FlatList } from 'react-native';
-
-interface ImageGridProps {
-    images: string[];
-}
+import { View, Image, StyleSheet, Dimensions } from 'react-native';
 
 const numColumns = 3;
-const spacing = 2;
-const screenWidth = Dimensions.get('window').width;
-const imageSize = (screenWidth - spacing * (numColumns - 1)) / numColumns;
+const imageMargin = 1;
+const imageSize = (Dimensions.get('window').width / numColumns) - (imageMargin * 2);
 
-const ImageGrid: React.FC<ImageGridProps> = ({ images }) => {
+const images = [
+    require('../assets/1.jpg'),
+    require('../assets/2.jpeg'),
+    require('../assets/3.jpg'),
+    require('../assets/4.jpg'),
+    require('../assets/5.jpg'),
+    require('../assets/6.jpg')
+    // Add more images here if needed
+];
+
+const ImageGrid: React.FC = () => {
     return (
-        <FlatList
-            data={images}
-            keyExtractor={(_, idx) => idx.toString()}
-            numColumns={numColumns}
-            renderItem={({ item }) => (
-                <View style={styles.imageContainer}>
-                    <Image source={{ uri: item }} style={styles.image} />
-                </View>
-            )}
-            contentContainerStyle={styles.grid}
-            showsVerticalScrollIndicator={false}
-        />
+        <View style={styles.container}>
+            {images.map((img, idx) => (
+                <Image
+                    key={idx}
+                    source={img}
+                    style={styles.image}
+                    resizeMode="cover"
+                />
+            ))}
+        </View>
     );
 };
 
 const styles = StyleSheet.create({
-    grid: {
-        margin: -spacing / 2,
-    },
-    imageContainer: {
-        width: imageSize,
-        height: imageSize,
-        margin: spacing / 2,
-        backgroundColor: '#eee',
+    container: {
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        width: '100%',
+        justifyContent: 'flex-start',
     },
     image: {
-        width: '100%',
-        height: '100%',
-        aspectRatio: 1,
-        resizeMode: 'cover',
+        width: imageSize,
+        height: imageSize,
+        margin: imageMargin,
     },
 });
 
