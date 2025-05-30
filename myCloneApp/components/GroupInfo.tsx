@@ -68,12 +68,12 @@ const GroupInfo = () => {
 const styles = StyleSheet.create({
   profileSection: {
     paddingHorizontal: 15,
-    paddingVertical: 20,
+    paddingVertical: 10,
   },
   profileInfo: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 15,
+    marginBottom: 10,
   },
   profileImage: {
     width: 80,
@@ -120,7 +120,7 @@ const styles = StyleSheet.create({
   },
   actionButtons: {
     flexDirection: 'row',
-    marginBottom: 20,
+    marginBottom: 5,
   },
   followButton: {
     flex: 1,
