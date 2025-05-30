@@ -9,9 +9,10 @@ import ImageGrid from './components/ImageGrid';
 export default function App() {
   return (
     <View style={styles.container}>
-      <ScrollView>
+      
         <NavBar />
         <GroupInfo />
+      <ScrollView>
         <ImageGrid />
       </ScrollView>
       <ButtomNav />
